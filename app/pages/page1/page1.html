@@ -1,0 +1,51 @@
+<ion-navbar *navbar>
+    <ion-title>Tab 1</ion-title>
+</ion-navbar>
+
+<ion-content padding class="page1">
+    <h2>Welcome to Ionic!</h2>
+    <label>Choose authentication type:</label>
+
+
+    <ion-list>
+
+        <ion-item>
+            <ion-label floating>Username</ion-label>
+            <ion-input type="text" [value]="username" (input)="username = $event.target.value"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input  [value]="password" (input)="password = $event.target.value" type="password"></ion-input>
+        </ion-item>
+
+    </ion-list>
+
+    <button (click)="getAuthTokenSimple()" class="btn btn-success">Token Auth</button>
+    <button (click)="useAnoymousAuth()" class="btn btn-danger">Anonymous Auth</button>
+    <br/>
+    <label>Using {{auth_type}} authentication</label>
+    <div>
+        <label [class.alert]="is_auth_error" [class.alert-danger]="is_auth_error">{{auth_status}}</label>
+    </div>
+    <hr/>
+    ADD TODO: <input [value]="name" (input)="name = $event.target.value">
+    <div>
+        <button (click)="getQuote()" class="btn btn-success">Get Items</button>
+        <button (click)="postItem()" class="btn btn-warning">Post Item</button>
+    </div>
+    <br/>
+    <label>Result:</label>
+
+    <ion-card *ngFor="#q of quoteOfTheDay">
+
+        <ion-card-header>
+
+        </ion-card-header>
+
+        <ion-card-content>
+            {{q}}
+        </ion-card-content>
+
+    </ion-card>
+</ion-content>
