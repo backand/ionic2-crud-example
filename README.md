@@ -15,3 +15,7 @@ Then run:
 <code>
  ionic serve 
 </code>
+
+
+![Desktop Part](screenshots/a.png)
+![Desktop Part](screenshots/b.png)
